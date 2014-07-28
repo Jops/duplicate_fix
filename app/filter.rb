@@ -24,11 +24,13 @@ class Filter
   private
 
   def add_id_key(id, file_path)
-    if @id_list.key? id
-      @id_list[id].push file_path
-    else
-      @id_list[id] = Array.new
-      @id_list[id].push file_path
+    if id.empty? == false
+      if @id_list.key? id
+        @id_list[id].push file_path
+      else
+        @id_list[id] = Array.new
+        @id_list[id].push file_path
+      end
     end
   end
 end

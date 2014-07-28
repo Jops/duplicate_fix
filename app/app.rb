@@ -22,5 +22,3 @@ ids = filter.init opts[:input_dir]
 
 clarify = Clarify.new
 clarify.init ids, opts[:output_dir]
-
-
