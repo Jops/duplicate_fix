@@ -9,7 +9,7 @@ class Clip
   end
 
   def zedId
-    id_node = @document.xpath '//details/id'
+    id_node = @document.xpath '/learning-clip/details/id'
     id_content = id_node.first.content
     match = /(?<zid>z[a-z0-9]{6})/.match(id_content)
     if match.nil? == false

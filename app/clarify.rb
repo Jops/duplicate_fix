@@ -50,12 +50,9 @@ class Clarify
   end
 
   def copy_files_to_output_directory(output_directory)
-    published_dir = output_directory+"/published"
-    FileUtils.mkdir published_dir
+    published_dir = output_directory+"/duplicates/published"
+    FileUtils.mkdir_p published_dir
     FileUtils.cp @duplicate_files.to_a, published_dir
-    unpublished_dir = output_directory+"/unpublished"
-    FileUtils.mkdir unpublished_dir
-    # FileUtils.cp @duplicate_files.to_a, unpublished_dir
   end
 end
 
