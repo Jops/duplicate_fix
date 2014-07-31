@@ -1,4 +1,4 @@
-require 'lib/clip'
+require 'lib/asset'
 require 'set'
 
 class Filter
@@ -12,7 +12,7 @@ class Filter
 
     Dir.glob "#{input_dir}/*.xml" do |file_path|
       f = File.open file_path, 'r'
-      document = Clip.new f
+      document = Asset.new f, file_path
       f.close
       add_id_key document.zedId, file_path
     end
