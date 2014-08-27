@@ -1,6 +1,5 @@
 require "net/http"
 require "uri"
-require "nokogiri"
 
 def grab
     # uri = URI('https://api.live.bbc.co.uk/zed/newid')
