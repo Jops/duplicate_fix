@@ -3,8 +3,8 @@ require "uri"
 require "nokogiri"
 
 def grab
-    uri = URI('https://api.live.bbc.co.uk/zed/newid')
-    # uri = URI('https://api.live.bbc.co.uk/knowlearn-asset/promos/homepage')
+    # uri = URI('https://api.live.bbc.co.uk/zed/newid')
+    uri = URI('https://api.live.bbc.co.uk/knowlearn-asset/learning-clips/z3ph34j')
     pem = File.read("../../certificates/dev.bbc.co.uk.pem")
 
     proxy_addr = 'www-cache.reith.bbc.co.uk'
@@ -32,7 +32,7 @@ def grab
 
     # Body
     puts '************'
-    puts @res.body
+    puts @res.body.scan(/<id>(z[a-z0-9]+)/)
     puts '************'
 end
 
